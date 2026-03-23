@@ -1,3 +1,4 @@
+# Potentially Approved Sites
 
 # Background
 
@@ -12,7 +13,7 @@ https://github.com/samuelgoto/agentic-federated-login
 # Proposal
 
   - Introduce a `potentially_approved_site_hashes` and `site_salt` to the [accounts endpoint](https://w3c-fedid.github.io/FedCM/#idp-api-accounts-endpoint) that allows the IdP to return potentially approved sites, rather than `client_id`s.
-  - Can contain false positives and false negatives
+  - Can contain false positives and false negatives (hence the same prefixed with `potentially_`)
 
 Example:
 
