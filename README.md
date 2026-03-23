@@ -1,6 +1,4 @@
-
-TODO: write introduction and motivation
-
+- Introduction and context: https://github.com/samuelgoto/agentic-federated-login
 - Goal: provide a federated login tool for agentic browsers
 - Challenge:
     - it is important for agentic browsers to tell the difference between signing-up vs signing-in
