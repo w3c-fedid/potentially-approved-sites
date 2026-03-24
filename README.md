@@ -6,7 +6,7 @@ TL;DR; This is a proposal to add two extra properties (`potentially_approved_sit
 
 There is a good introduction of the space here:
 
-https://github.com/samuelgoto/agentic-federated-login
+https://github.com/w3c-fedid/agentic-federated-login
 
 # Problem
 
