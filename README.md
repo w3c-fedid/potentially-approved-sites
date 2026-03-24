@@ -40,6 +40,22 @@ Because of that, the browser can't test if the URL that it is on is in the `appr
 
 > As we said earlier, when the website calls into the FedCM API call on page load, it reveals what its clientId is, and so makes this whole process easier. But as also said earlier, not every website in the world call into the FedCM API.
 
+# Alternatives Considered
+
+## Ask Websites to expose their `clientId`
+
+The first alternative that is worth noting is that none of this would be a problem if the website told the browser what their `clientId` was, say, in a `<meta>` tag or `.well-known` file somewhere. We ruled that out quickly because there are hundreds of thousands of websites, and asking each one of them one by one would be insurmountable.
+
+## Deploy using JS SDKs
+
+There is a variation of the last alternative that is a bit more plausible which is to rely on JS SDKs that IdPs control on the website's page. We think this might be a viable option (e.g. via the [`<login>`](https://github.com/fedidcg/login-element) element), but won't cover all of the ground, so insufficient.
+
+## Fake click the "Sign-in with X" buttons to compute `clientId`
+
+The second alternative that we considered was to have the agentic browser "click" on the "Sign-in with X" button and follow that navigation. Because the navigation is well formed (e.g. OAuth or SAML), the browser would be able to figure out what the `clientId` was by parsing the URL query parameters.
+
+This is challenging because the agent has to (a) find the "Sign-in with X" button and (b) click it. Step (a) isn't that hard, but step (b) is hard to get right: it has to be done in a different browser context (say, an incognito window), because otherwise it can have an actual effect on the user journey.
+
 # Proposal
 
   - Introduce a `potentially_approved_site_hashes` and `site_salt` to the [accounts endpoint](https://w3c-fedid.github.io/FedCM/#idp-api-accounts-endpoint) that allows the IdP to return potentially approved sites, rather than `client_id`s.
