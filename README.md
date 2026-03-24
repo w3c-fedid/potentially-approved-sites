@@ -94,6 +94,8 @@ This isn't great, but together with the [IdP-Initiated FedCM](https://github.com
 
 We don't know yet, quantifiably, the rate of false positives and false negatives, so while we think this is theoretically possible, we don't know how often it will happen. As we learn more from our production experience we'll adjust how we think about alternatives.
 
+We use `potentially_approved_site_hashes` rather than `potentially_approved_site` for two reasons: first, it leads to fewer bytes and second, it avoids revealing to the browser the sites (aside from enumeration attacks) while still allowing the browser to test if the **specific** site the user is in has already been approved.
+
 We fully acknowledge that this proposal isn't neither elegant nor ideal, but we think it is necessary to retrofit agentic browsers to the current web.
 
 We are developing the [`<login>`](https://github.com/fedidcg/login-element) hoping it will be a more sustainable long term end state.
