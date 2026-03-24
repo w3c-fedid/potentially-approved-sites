@@ -71,9 +71,15 @@ For example:
 
 ```json
 {
-  "approved_clients" : [...],
-  "potentially_approved_site_hashes": [...],
-  "site_salt": "...",
+  "accounts": [{
+    "id": "...",
+    "name": "...",
+    "email": "...",
+    "picture": "...",
+    "approved_clients": ["..."],
+    "potentially_approved_site_hashes": ["..."]
+  }],
+  "site_salt": "..."
 }
 ```
 
